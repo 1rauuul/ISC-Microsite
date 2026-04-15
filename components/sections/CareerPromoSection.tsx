@@ -33,7 +33,7 @@ export default function CareerPromoSection() {
             <SectionTitle
               eyebrow="¿Por qué ISC?"
               title="Una carrera para quienes quieren cambiar el mundo"
-              subtitle="Estudia la disciplina que más crece, más paga y más impacta. Con ISC tendrás las habilidades para crear desde apps hasta sistemas de IA."
+              subtitle="Estudia la disciplina que más crece y más impacta. Con ISC tendrás las habilidades para crear desde apps hasta sistemas de IA."
             />
 
             {/* Stats grid */}
@@ -76,17 +76,6 @@ export default function CareerPromoSection() {
               ))}
             </div>
 
-            {/* Salary card */}
-            <div className="mt-5 bg-gradient-to-r from-primary to-secondary rounded-2xl p-6 text-white">
-              <p className="text-sm font-medium text-primary-200 mb-1">Sueldo promedio en México</p>
-              <p className="text-3xl font-bold">$45,000 — $120,000</p>
-              <p className="text-primary-200 text-sm mt-1">MXN/mes según experiencia y área</p>
-              <div className="mt-3 flex gap-2">
-                <Badge color="cyan" className="bg-secondary/20 text-primary-100 ring-secondary/30">
-                  Fuente: OCC Mundial 2025
-                </Badge>
-              </div>
-            </div>
           </div>
         </div>
       </div>

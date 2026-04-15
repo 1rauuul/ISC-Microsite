@@ -10,8 +10,6 @@ const footerLinks = {
   ],
   admision: [
     { label: "Proceso de Admisión", href: "/admision" },
-    { label: "Costos e Inscripción", href: "/costos" },
-    { label: "Becas y Apoyos", href: "/apoyos" },
     { label: "Registro", href: "/registro" },
   ],
   herramientas: [

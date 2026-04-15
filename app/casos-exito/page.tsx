@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ExternalLink, Building2, TrendingUp } from "lucide-react";
+import { ExternalLink, Building2 } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Badge from "@/components/ui/Badge";
 import { egresados } from "@/lib/mockData";
@@ -38,10 +38,9 @@ export default function CasosExitoPage() {
       {/* Stats banner */}
       <div className="bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
             {[
               { valor: "1,200+", label: "Egresados activos" },
-              { valor: "$72K", label: "Sueldo promedio MXN/mes" },
               { valor: "40+", label: "Empresas top empleadoras" },
               { valor: "97%", label: "Empleabilidad" },
             ].map((stat) => (
@@ -87,16 +86,6 @@ export default function CasosExitoPage() {
                 <blockquote className="text-sm text-slate-600 italic leading-relaxed mb-4">
                   &ldquo;{egresado.testimonio}&rdquo;
                 </blockquote>
-
-                <div className="bg-green-50 border border-green-100 rounded-xl p-3 mb-4">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="w-4 h-4 text-green-600" />
-                    <div>
-                      <p className="text-xs text-green-600 font-semibold">Remuneración actual</p>
-                      <p className="text-sm font-bold text-green-700">{egresado.sueldo}</p>
-                    </div>
-                  </div>
-                </div>
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">

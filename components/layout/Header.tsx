@@ -23,8 +23,6 @@ const navLinks = [
     href: "#",
     dropdown: [
       { label: "Proceso de Admisión", href: "/admision" },
-      { label: "Costos", href: "/costos" },
-      { label: "Becas y Apoyos", href: "/apoyos" },
     ],
   },
   { label: "Asesor IA", href: "/asesor" },

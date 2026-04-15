@@ -26,7 +26,7 @@ export default function WhatsAppSection() {
 
               <p className="text-white/80 leading-relaxed mb-6">
                 Un asesor estudiantil responderá tus preguntas sobre admisión, 
-                retícula, becas y vida universitaria en menos de 24 horas.
+                retícula y vida universitaria en menos de 24 horas.
               </p>
 
               <div className="space-y-3 mb-8">

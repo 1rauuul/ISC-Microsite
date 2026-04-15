@@ -11,7 +11,6 @@ export const egresados = [
     testimonio:
       "La carrera me dio la base técnica y el pensamiento lógico que Google busca en sus ingenieros. El proyecto integrador fue clave.",
     linkedin: "#",
-    sueldo: "$85,000 MXN/mes",
   },
   {
     id: 2,
@@ -24,7 +23,6 @@ export const egresados = [
     testimonio:
       "Aprendí a ver los datos como el recurso más valioso. Hoy dirijo un equipo de 8 personas en análisis predictivo.",
     linkedin: "#",
-    sueldo: "$72,000 MXN/mes",
   },
   {
     id: 3,
@@ -37,7 +35,6 @@ export const egresados = [
     testimonio:
       "Monté mi startup de fintech al tercer año de egresada. Los conocimientos de redes y seguridad fueron fundamentales.",
     linkedin: "#",
-    sueldo: "Valuación: $2M USD",
   },
   {
     id: 4,
@@ -50,7 +47,6 @@ export const egresados = [
     testimonio:
       "Trabajar en arquitecturas cloud a escala global es posible gracias a la formación sólida en sistemas distribuidos.",
     linkedin: "#",
-    sueldo: "$95,000 MXN/mes",
   },
   {
     id: 5,
@@ -63,7 +59,6 @@ export const egresados = [
     testimonio:
       "La carrera me enseñó a pensar en sistemas completos, no solo en interfaces. Eso me diferencia en el equipo.",
     linkedin: "#",
-    sueldo: "$78,000 MXN/mes",
   },
   {
     id: 6,
@@ -76,7 +71,6 @@ export const egresados = [
     testimonio:
       "Integré IA en productos usados por millones. El campus fue donde programé mi primer modelo de ML.",
     linkedin: "#",
-    sueldo: "$120,000 MXN/mes",
   },
 ];
 
@@ -408,98 +402,13 @@ export const preguntasTest = [
 // ─── ESTADÍSTICAS DE LA CARRERA ─────────────────────────────────────────────
 export const estadisticasCarrera = [
   { valor: "97%", etiqueta: "Empleabilidad al egreso" },
-  { valor: "$45K", etiqueta: "Sueldo promedio inicial (MXN/mes)" },
   { valor: "8°", etiqueta: "Posición en ranking nacional ISC" },
   { valor: "1,200+", etiqueta: "Egresados activos en industria" },
   { valor: "35+", etiqueta: "Empresas aliadas para prácticas" },
   { valor: "100%", etiqueta: "Laboratorios equipados con tecnología reciente" },
 ];
 
-// ─── BECAS Y APOYOS ─────────────────────────────────────────────────────────
-export const becas = [
-  {
-    id: 1,
-    nombre: "Beca TECNM Excelencia",
-    tipo: "Académica",
-    monto: "100% inscripción",
-    requisito: "Promedio mínimo 9.0 y sin materias reprobadas",
-    plazo: "Semestral",
-    icono: "🏆",
-    color: "yellow",
-  },
-  {
-    id: 2,
-    nombre: "Beca Socioeconómica",
-    tipo: "Apoyo económico",
-    monto: "50-100% inscripción",
-    requisito: "Estudio socioeconómico favorable",
-    plazo: "Anual",
-    icono: "💙",
-    color: "blue",
-  },
-  {
-    id: 3,
-    nombre: "Beca Movilidad Nacional",
-    tipo: "Movilidad",
-    monto: "$5,000 MXN + viáticos",
-    requisito: "Promedio 8.5+, idioma inglés básico",
-    plazo: "Por convocatoria",
-    icono: "✈️",
-    color: "cyan",
-  },
-  {
-    id: 4,
-    nombre: "Beca Movilidad Internacional",
-    tipo: "Movilidad",
-    monto: "Hasta $80,000 MXN",
-    requisito: "Promedio 9.0+, inglés B2",
-    plazo: "Anual",
-    icono: "🌎",
-    color: "violet",
-  },
-  {
-    id: 5,
-    nombre: "Apoyo Deportivo",
-    tipo: "Deportivo",
-    monto: "50% inscripción",
-    requisito: "Representar al instituto en competencias oficiales",
-    plazo: "Semestral",
-    icono: "⚽",
-    color: "green",
-  },
-  {
-    id: 6,
-    nombre: "Beca Empresa Patrocinadora",
-    tipo: "Empresarial",
-    monto: "Inscripción + mensualidad",
-    requisito: "Proceso de selección con empresa aliada",
-    plazo: "Por empresa",
-    icono: "🏢",
-    color: "slate",
-  },
-];
 
-// ─── COSTOS ─────────────────────────────────────────────────────────────────
-export const costos = {
-  inscripcion: {
-    semestral: 2800,
-    anual: 5600,
-    descripcion: "Incluye acceso a laboratorios, biblioteca digital y plataformas educativas",
-  },
-  colegiaturas: {
-    mensual: 0,
-    descripcion: "La institución es pública — NO hay colegiatura mensual",
-  },
-  serviciosTitulacion: {
-    monto: 3500,
-    descripcion: "Pago único al concluir créditos para iniciar proceso de titulación",
-  },
-  estimadoAnual: {
-    min: 3000,
-    max: 8000,
-    descripcion: "Materiales, papelería, copias, software (estimado)",
-  },
-};
 
 // ─── ÁREAS DE RECORRIDO VIRTUAL ──────────────────────────────────────────────
 export const areasRecorrido = [
@@ -587,13 +496,13 @@ export const pasoAdmision = [
 // ─── MISIÓN, VISIÓN, OBJETIVOS, ATRIBUTOS ──────────────────────────────────
 export const misionVision = {
   mision:
-    "La academia de sistemas y computación tiene como misión formar de manera integral, diversificada y con calidad, profesionistas comprometidos con el conocimiento científico y tecnológico, orientados al desarrollo sustentable, con sentido ético y de responsabilidad social.",
+    "La academia de sistemas y computación tiene como misión formar de manera integral, diversificada y con calidad, profesionistas comprometidos con el conocimiento y la investigación de la ingeniería en Sistemas Computacionales, competitivos y capaces de ejercer el liderazgo con sentido propositivo para contribuir responsablemente en la integración de una sociedad de bienestar, con impacto regional, nacional e internacional.",
   vision:
-    "Ser reconocidos como un programa académico de excelencia, líder en la formación de ingenieros en sistemas computacionales con competencias para innovar y transformar el entorno tecnológico regional y nacional.",
+    "La academia de sistemas y computación será reconocida por su compromiso con la responsabilidad social, su calidad académica, liderazgo y competitividad de sus egresados, por el desarrollo integral de su planta docente y administrativa; además, de su importante participación en la investigación e innovación científica que contribuya fortaleciendo la carrera de Ingeniería en Sistemas Computacionales. Así mismo, ser distinguida a nivel regional, nacional e internacional por la certificación de los procesos y acreditación de su programa educativo.",
   objetivos:
-    "El egresado(a) construye, configura, evalúa y selecciona entornos de servicios computacionales, capaces de generar nueva tecnología y de encontrar e implantar soluciones a la problemática del entorno, utilizando los conocimientos en ciencias básicas e ingeniería.",
+    "El egresado(a) construye, configura, evalúa y selecciona entornos de servicios computacionales, capaces de generar nueva tecnología y de encontrar e implantar soluciones eficientes de cómputo en las organizaciones para contribuir al desarrollo nacional e internacional. El egresado(a) crea sus propias empresas estableciéndose como profesionales en la práctica de la Ingeniería en Sistemas Computacionales promoviendo el desarrollo tecnológico, demostrando liderazgo y respeto a los valores del ser humano y la naturaleza. El egresado(a) desarrolla actividades de capacitación, educación continua,  posgrado e investigación y desarrollo tecnológico; para participar en propuestas de mejora para el desarrollo de su entorno.",
   atributos:
-    "Analizar, diseñar, desarrollar e implementar soluciones computacionales a problemas de diversos contextos, integrando diferentes tecnologías, plataformas y lenguajes de programación para satisfacer necesidades de información.",
+    "Analizar, diseñar, desarrollar e implementar soluciones computacionales a problemas de diversos contextos, integrando diferentes tecnologías, plataformas o dispositivos, Diseñar, desarrollar y aplicar modelos computacionales para solucionar problemas, mediante la selección y uso de herramientas de ingeniería, Diseñar, implementar y administrar bases de datos optimizando los recursos disponibles, conforme a las normas de gestión y seguridad de la información, Diseñar, configurar y administrar redes de computadoras para crear soluciones de conectividad en la organización aplicando las normas y estándares, Comunicar sus ideas de manera efectiva a diferentes audiencias, Asumir las responsabilidades éticas en el desarrollo de su profesión en situaciones relevantes analizando el impacto económico, técnico, social y ambiental, Reconocer la importancia del aprendizaje continuo para permanecer actualizado en la ingeniería para aplicar e integrar conocimientos de manera adecuada, Coordinar y participar en equipos multidisciplinarios para la aplicación de soluciones innovadoras en diferentes contextos.",
 };
 
 // ─── DOCENTES DEL ÁREA ─────────────────────────────────────────────────────

@@ -88,14 +88,10 @@ export default function CasosExitoSection() {
           ))}
         </div>
 
-        <div className="mt-8 bg-gradient-to-r from-slate-900 to-primary-900 rounded-2xl p-6 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <p className="text-slate-300 text-sm mb-1">Sueldo promedio de egresados ISC</p>
-            <p className="text-2xl font-bold">$72,000 MXN / mes</p>
-          </div>
+        <div className="mt-8 text-center">
           <Link
             href="/casos-exito"
-            className="flex items-center gap-2 bg-white text-slate-900 font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-primary-50 transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 bg-slate-900 text-white font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-slate-800 transition-colors"
           >
             Conoce sus trayectorias
             <ArrowRight className="w-4 h-4" />

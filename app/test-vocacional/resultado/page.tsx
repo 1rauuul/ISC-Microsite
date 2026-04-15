@@ -95,10 +95,6 @@ export default function ResultadoPage() {
                 <Badge key={empleo} color="blue">{empleo}</Badge>
               ))}
             </div>
-            <div className="mt-4 bg-primary-50 rounded-xl p-3 border border-primary-100">
-              <p className="text-xs text-primary-dark font-semibold">💰 Sueldo promedio en esta área</p>
-              <p className="text-lg font-bold text-primary-800 mt-0.5">$55,000 — $90,000 MXN/mes</p>
-            </div>
           </div>
         </div>
 

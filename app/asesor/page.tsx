@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Bot, User, Sparkles, BookOpen, Calendar, DollarSign, HelpCircle } from "lucide-react";
+import { Send, Bot, User, Sparkles, BookOpen, Calendar, HelpCircle } from "lucide-react";
 
 const sugerencias = [
   { icono: BookOpen, texto: "¿Qué materias se ven en ISC?" },
   { icono: Calendar, texto: "¿Cuándo son los exámenes de admisión?" },
-  { icono: DollarSign, texto: "¿Qué becas hay disponibles?" },
   { icono: HelpCircle, texto: "¿Necesito saber programar para entrar?" },
 ];
 
@@ -20,7 +19,7 @@ const conversacionInicial = [
   {
     tipo: "bot",
     mensaje:
-      "Puedo orientarte sobre: retícula, proceso de admisión, costos, becas, perfil de egreso, áreas de especialidad y mucho más. 🚀",
+      "Puedo orientarte sobre: retícula, proceso de admisión, perfil de egreso, áreas de especialidad y mucho más. 🚀",
     hora: "10:00",
   },
 ];

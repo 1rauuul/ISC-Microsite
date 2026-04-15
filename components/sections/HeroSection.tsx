@@ -58,7 +58,6 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-6">
               {[
                 { valor: "97%", etiqueta: "empleabilidad" },
-                { valor: "$45K", etiqueta: "sueldo inicial" },
                 { valor: "1,200+", etiqueta: "egresados activos" },
               ].map((stat) => (
                 <div key={stat.etiqueta}>
