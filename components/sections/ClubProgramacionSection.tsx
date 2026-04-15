@@ -48,9 +48,8 @@ export default function ClubProgramacionSection() {
             </p>
             <div className="grid grid-cols-3 gap-4">
               {[
-                { valor: "48h", etiqueta: "de competencia" },
-                { valor: "50+", etiqueta: "participantes" },
-                { valor: "3", etiqueta: "categorías" },
+                { valor: "5h", etiqueta: "de competencia" },
+                { valor: "200+", etiqueta: "participantes" },
               ].map((stat) => (
                 <div key={stat.etiqueta} className="text-center">
                   <p className="text-2xl font-bold">{stat.valor}</p>

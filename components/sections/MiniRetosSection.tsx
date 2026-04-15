@@ -29,9 +29,9 @@ export default function MiniRetosSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <SectionTitle
-            eyebrow="Mini retos técnicos"
-            title="Prueba tu potencial antes de entrar"
-            subtitle="Ejercicios reales por área que puedes intentar hoy. Sin experiencia previa requerida."
+            eyebrow="Mini retos de lógica"
+            title="¿Tienes mente de ingeniero?"
+            subtitle="Retos de pensamiento lógico e introducción a la programación. Sin experiencia previa — solo curiosidad."
           />
           <Link
             href="/retos"
@@ -90,7 +90,7 @@ export default function MiniRetosSection() {
             href="/retos"
             className="inline-flex items-center gap-2 bg-primary text-white font-semibold text-sm px-8 py-3.5 rounded-xl hover:bg-primary-dark transition-colors shadow-sm"
           >
-            Explorar todos los retos
+            Ver todos los retos
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

@@ -18,8 +18,6 @@ const areas = [
   { icono: Shield, label: "Ciberseguridad", color: "text-red-600 bg-red-50" },
   { icono: Cloud, label: "Cómputo en la Nube", color: "text-secondary bg-secondary-light" },
   { icono: Database, label: "Ciencia de Datos", color: "text-orange-600 bg-orange-50" },
-  { icono: Smartphone, label: "Desarrollo Móvil", color: "text-green-600 bg-green-50" },
-  { icono: TrendingUp, label: "Emprendimiento TI", color: "text-pink-600 bg-pink-50" },
   { icono: Globe, label: "IoT & Industria 4.0", color: "text-teal-600 bg-teal-50" },
 ];
 
