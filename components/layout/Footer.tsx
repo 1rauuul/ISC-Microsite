@@ -13,9 +13,9 @@ const footerLinks = {
     { label: "Registro", href: "/registro" },
   ],
   herramientas: [
-    { label: "Test Vocacional", href: "/test-vocacional" },
+    // { label: "Test Vocacional", href: "/test-vocacional" },
     { label: "Eventos", href: "/eventos" },
-    { label: "Asesor IA", href: "/asesor" },
+    // { label: "Asesor IA", href: "/asesor" },
   ],
 };
 

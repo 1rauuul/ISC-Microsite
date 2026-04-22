@@ -25,7 +25,7 @@ export default function RegistroSection() {
               light
             />
 
-            <div className="mt-8 space-y-4">
+            {/* <div className="mt-8 space-y-4">
               {[
                 { icono: "📩", texto: "Recibirás información de admisión por correo" },
                 { icono: "📱", texto: "Un asesor te contactará por WhatsApp" },
@@ -37,7 +37,7 @@ export default function RegistroSection() {
                   <span className="text-sm">{item.texto}</span>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <div className="bg-white rounded-3xl shadow-2xl p-8">

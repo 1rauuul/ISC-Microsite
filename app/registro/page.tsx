@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { User, Mail, Phone, GraduationCap, MapPin, Calendar, MessageSquare, ChevronDown } from "lucide-react";
+import { Calendar } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
+import ContactoForm from "@/components/forms/ContactoForm";
 
 export const metadata: Metadata = {
   title: "Registro",
@@ -60,110 +61,8 @@ export default function RegistroPage() {
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-2 bg-white rounded-3xl border border-slate-100 shadow-sm p-8">
-            <h3 className="font-bold text-slate-900 text-lg mb-6">Datos de contacto</h3>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                  Nombre(s) *
-                </label>
-                <div className="flex items-center gap-3 border border-slate-200 rounded-xl px-3 py-3">
-                  <User className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                  <input type="text" placeholder="Tu nombre" className="flex-1 text-sm outline-none text-slate-700 placeholder-slate-400" readOnly />
-                </div>
-              </div>
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                  Apellidos *
-                </label>
-                <div className="flex items-center gap-3 border border-slate-200 rounded-xl px-3 py-3">
-                  <User className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                  <input type="text" placeholder="Tus apellidos" className="flex-1 text-sm outline-none text-slate-700 placeholder-slate-400" readOnly />
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                  Correo electrónico *
-                </label>
-                <div className="flex items-center gap-3 border border-slate-200 rounded-xl px-3 py-3">
-                  <Mail className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                  <input type="email" placeholder="tu@correo.com" className="flex-1 text-sm outline-none text-slate-700 placeholder-slate-400" readOnly />
-                </div>
-              </div>
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                  Teléfono / WhatsApp *
-                </label>
-                <div className="flex items-center gap-3 border border-slate-200 rounded-xl px-3 py-3">
-                  <Phone className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                  <input type="tel" placeholder="10 dígitos" className="flex-1 text-sm outline-none text-slate-700 placeholder-slate-400" readOnly />
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                  Escuela de procedencia
-                </label>
-                <div className="flex items-center gap-3 border border-slate-200 rounded-xl px-3 py-3">
-                  <GraduationCap className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                  <input type="text" placeholder="Bachillerato / Preparatoria" className="flex-1 text-sm outline-none text-slate-700 placeholder-slate-400" readOnly />
-                </div>
-              </div>
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                  Ciudad / Estado
-                </label>
-                <div className="flex items-center gap-3 border border-slate-200 rounded-xl px-3 py-3">
-                  <MapPin className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                  <input type="text" placeholder="Tu ciudad" className="flex-1 text-sm outline-none text-slate-700 placeholder-slate-400" readOnly />
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                ¿Cómo te enteraste de ISC?
-              </label>
-              <div className="flex items-center gap-3 border border-slate-200 rounded-xl px-3 py-3">
-                <ChevronDown className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                <select className="flex-1 text-sm outline-none text-slate-400 bg-transparent" disabled>
-                  <option>Selecciona una opción</option>
-                  <option>Redes sociales</option>
-                  <option>Recomendación de amigo/familiar</option>
-                  <option>Feria universitaria</option>
-                  <option>Búsqueda en internet</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="mb-6">
-              <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                ¿Qué te interesa saber? (opcional)
-              </label>
-              <div className="flex items-start gap-3 border border-slate-200 rounded-xl px-3 py-3">
-                <MessageSquare className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" />
-                <textarea placeholder="Becas, retícula, laboratorios, vida universitaria..." rows={3} className="flex-1 text-sm outline-none text-slate-700 placeholder-slate-400 resize-none" readOnly />
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 mb-6">
-              <input type="checkbox" className="mt-0.5 accent-primary" readOnly />
-              <p className="text-xs text-slate-500">
-                Acepto el{" "}
-                <a href="#" className="text-primary hover:underline">aviso de privacidad</a>{" "}
-                y que me contacten para orientación sobre la carrera. Sin spam.
-              </p>
-            </div>
-
-            <button className="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-primary-200 text-base">
-              Enviar mi registro
-            </button>
+          <div className="lg:col-span-2">
+            <ContactoForm />
           </div>
         </div>
       </div>

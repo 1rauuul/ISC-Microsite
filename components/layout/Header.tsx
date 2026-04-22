@@ -6,7 +6,7 @@ import { Menu, X, Cpu, ChevronDown } from "lucide-react";
 import Button from "@/components/ui/Button";
 
 const navLinks = [
-  { label: "Test Vocacional", href: "/test-vocacional" },
+  // { label: "Test Vocacional", href: "/test-vocacional" },
   { label: "Retícula", href: "/reticula" },
   {
     label: "Conoce ISC",
@@ -25,7 +25,7 @@ const navLinks = [
       { label: "Proceso de Admisión", href: "/admision" },
     ],
   },
-  { label: "Asesor IA", href: "/asesor" },
+  // { label: "Asesor IA", href: "/asesor" },
 ];
 
 export default function Header() {
@@ -96,9 +96,9 @@ export default function Header() {
 
           {/* CTA Desktop */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button href="/asesor" variant="ghost" size="sm">
+            {/* <Button href="/asesor" variant="ghost" size="sm">
               Hablar con asesor
-            </Button>
+            </Button> */}
             <Button href="/registro" variant="primary" size="sm">
               Regístrate
             </Button>
@@ -160,9 +160,9 @@ export default function Header() {
               )
             )}
             <div className="pt-3 flex flex-col gap-2 border-t border-slate-100">
-              <Button href="/asesor" variant="ghost" size="sm" className="w-full justify-center">
+              {/* <Button href="/asesor" variant="ghost" size="sm" className="w-full justify-center">
                 Hablar con asesor
-              </Button>
+              </Button> */}
               <Button href="/registro" variant="primary" size="sm" className="w-full justify-center">
                 Regístrate
               </Button>

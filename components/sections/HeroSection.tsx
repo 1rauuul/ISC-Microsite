@@ -44,10 +44,10 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-10">
-              <Button href="/test-vocacional" variant="primary" size="lg">
+              {/* <Button href="/test-vocacional" variant="primary" size="lg">
                 Haz tu test vocacional
                 <ArrowRight className="w-5 h-5" />
-              </Button>
+              </Button> */}
               <Button href="/registro" variant="ghost" size="lg" className="border-slate-600 text-white hover:bg-white/10 hover:border-white">
                 <Play className="w-5 h-5" />
                 Ver video de la carrera
