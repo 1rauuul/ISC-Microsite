@@ -12,12 +12,12 @@ const navLinks = [
     label: "Conoce ISC",
     href: "#",
     dropdown: [
-      { label: "Casos de Éxito", href: "/casos-exito" },
+      // { label: "Casos de Éxito", href: "/casos-exito" },
       { label: "Retos por Área", href: "/retos" },
-      { label: "Recorrido Virtual", href: "/recorrido-virtual" },
+      // { label: "Recorrido Virtual", href: "/recorrido-virtual" },
     ],
   },
-  { label: "Eventos", href: "/eventos" },
+  // { label: "Eventos", href: "/eventos" },
   {
     label: "Admisión",
     href: "#",

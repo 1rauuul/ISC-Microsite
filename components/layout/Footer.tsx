@@ -4,7 +4,7 @@ import { Cpu, MapPin, Phone, Mail, Globe, AtSign, Camera, Play, ExternalLink } f
 const footerLinks = {
   carrera: [
     { label: "Retícula", href: "/reticula" },
-    { label: "Casos de Éxito", href: "/casos-exito" },
+    // { label: "Casos de Éxito", href: "/casos-exito" },
     { label: "Retos por Área", href: "/retos" },
     { label: "Recorrido Virtual", href: "/recorrido-virtual" },
   ],
@@ -14,7 +14,7 @@ const footerLinks = {
   ],
   herramientas: [
     // { label: "Test Vocacional", href: "/test-vocacional" },
-    { label: "Eventos", href: "/eventos" },
+    // { label: "Eventos", href: "/eventos" },
     // { label: "Asesor IA", href: "/asesor" },
   ],
 };
