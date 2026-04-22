@@ -58,7 +58,7 @@ export default function CareerPromoSection() {
           {/* Right: Areas grid */}
           <div>
             <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-5">
-              Áreas de especialidad
+              Módulos de especialidad
             </p>
             <div className="grid grid-cols-2 gap-3">
               {areas.map(({ icono: Icon, label, color }) => (

@@ -26,28 +26,28 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <VideoSection />
-      <QuoteSection />
       <MisionVisionSection />
+      {/* <VideoSection /> */}
+      <QuoteSection />
+      <MiniRetosSection />
       <CareerPromoSection />
+      <AdmisionCostosApoyosSection />
+      <RegistroSection />
       <NuevoIngresoSection />
-      <WhatsAppSection />
-      <TestVocacionalCTA />
+      {/* <WhatsAppSection /> */}
+      {/* <TestVocacionalCTA /> */}
       <ReticulaPreviewSection />
       <CasosExitoSection />
       <ClubProgramacionSection />
-      <MiniRetosSection />
-      <RecorridoVirtualSection />
+      {/* <RecorridoVirtualSection /> */}
       <BibliotecaSection />
-      <EventosSection />
+      {/* <EventosSection /> */}
       <CongresoSection />
       <ServiciosEscolaresSection />
       <InfoImportanteSection />
       <TitulacionEgelSection />
-      <AdmisionCostosApoyosSection />
       <RankingSection />
       <DirectorioDocentesSection />
-      <RegistroSection />
     </>
   );
 }

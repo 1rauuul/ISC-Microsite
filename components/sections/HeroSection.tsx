@@ -55,7 +55,7 @@ export default function HeroSection() {
             </div>
 
             {/* Stats row */}
-            <div className="flex flex-wrap gap-6">
+            {/* <div className="flex flex-wrap gap-6">
               {[
                 { valor: "97%", etiqueta: "empleabilidad" },
                 { valor: "1,200+", etiqueta: "egresados activos" },
@@ -65,31 +65,23 @@ export default function HeroSection() {
                   <p className="text-xs text-slate-400 uppercase tracking-wide">{stat.etiqueta}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
-          {/* Right: Video placeholder */}
+          {/* Right: Video */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary-900/50 border border-white/10 aspect-video bg-slate-800">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-900/60 to-slate-900/80 flex items-center justify-center">
-                <div className="text-center">
-                  <button className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-all flex items-center justify-center mx-auto mb-4 group">
-                    <Play className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform" />
-                  </button>
-                  <p className="text-white font-semibold">Un día en ISC</p>
-                  <p className="text-slate-300 text-sm">3:42 min</p>
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black/60 to-transparent flex items-center px-4 gap-2">
-                <div className="h-1 flex-1 bg-white/20 rounded-full overflow-hidden">
-                  <div className="h-full w-1/3 bg-primary-400 rounded-full" />
-                </div>
-                <span className="text-xs text-white/70">1:14 / 3:42</span>
-              </div>
+              <iframe
+                src="https://www.youtube.com/embed/kMdAk8g08WI?rel=0&modestbranding=1"
+                title="Un día en ISC"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
             </div>
 
             {/* Floating cards */}
-            <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg p-3 flex items-center gap-2.5 border border-slate-100">
+            {/* <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg p-3 flex items-center gap-2.5 border border-slate-100">
               <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center">
                 <span className="text-green-600 text-sm font-bold">✓</span>
               </div>
@@ -97,15 +89,15 @@ export default function HeroSection() {
                 <p className="text-xs font-semibold text-slate-800">Clase en vivo ahora</p>
                 <p className="text-xs text-slate-500">Estructuras de Datos</p>
               </div>
-            </div>
+            </div> */}
 
-            <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-3 flex items-center gap-2.5 border border-slate-100">
+            {/* <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-3 flex items-center gap-2.5 border border-slate-100">
               <MessageCircle className="w-7 h-7 text-[#25D366]" />
               <div>
                 <p className="text-xs font-semibold text-slate-800">¿Tienes dudas?</p>
                 <p className="text-xs text-[#25D366] font-medium">WhatsApp →</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
