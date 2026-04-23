@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   AlertCircle,
   Loader2,
+  ArrowRight,
 } from "lucide-react";
 import { getSupabaseClient, type ContactoInteresadoInsert } from "@/lib/supabase";
 
@@ -167,7 +168,7 @@ export default function ContactoForm() {
 
   if (isSuccess) {
     return (
-      <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-10 text-center">
+      <div className="bg-white rounded-3xl shadow-2xl p-10 text-center">
         <div className="mx-auto w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-4">
           <CheckCircle2 className="w-7 h-7 text-green-600" />
         </div>
@@ -184,9 +185,9 @@ export default function ContactoForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="bg-white rounded-3xl border border-slate-100 shadow-sm p-8"
+      className="bg-white rounded-3xl shadow-2xl p-8"
     >
-      <h3 className="font-bold text-slate-900 text-lg mb-6">Datos de contacto</h3>
+      <h3 className="text-xl font-bold text-slate-900 mb-6">Quiero más información</h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
         <Field
@@ -268,11 +269,10 @@ export default function ContactoForm() {
         <Field
           label="Escuela de procedencia"
           icon={<GraduationCap className="w-4 h-4 text-slate-400 flex-shrink-0" />}
-          error={fieldErrors.escuela_procedencia}
         >
           <input
             type="text"
-            placeholder="Bachillerato / Preparatoria"
+            placeholder="Preparatoria o bachillerato"
             value={form.escuela_procedencia}
             onChange={(e) => handleChange("escuela_procedencia", e.target.value)}
             disabled={isSubmitting}
@@ -328,8 +328,8 @@ export default function ContactoForm() {
           alignTop
         >
           <textarea
-            placeholder="Becas, retícula, laboratorios, vida universitaria..."
-            rows={3}
+            placeholder="Becas, laboratorios, retícula..."
+            rows={2}
             value={form.intereses}
             onChange={(e) => handleChange("intereses", e.target.value)}
             disabled={isSubmitting}
@@ -384,11 +384,11 @@ export default function ContactoForm() {
           className="mt-0.5 accent-primary w-4 h-4 flex-shrink-0"
         />
         <label htmlFor="acepta_aviso_privacidad" className="text-xs text-slate-500 cursor-pointer select-none">
-          Acepto el{" "}
-          <a href="#" className="text-primary hover:underline">
+          Al registrarte aceptas nuestro{" "}
+          <a href="#" className="text-primary-500 hover:underline">
             aviso de privacidad
-          </a>{" "}
-          y que me contacten para orientación sobre la carrera. Sin spam.
+          </a>
+          . Sin spam, prometido.
         </label>
       </div>
       {fieldErrors.acepta_aviso_privacidad && (
@@ -408,7 +408,7 @@ export default function ContactoForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-primary-200 text-base disabled:opacity-60 disabled:cursor-not-allowed"
+        className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-primary to-secondary text-white font-bold text-sm py-3.5 rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-primary-200 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {isSubmitting ? (
           <>
@@ -416,7 +416,10 @@ export default function ContactoForm() {
             Enviando...
           </>
         ) : (
-          "Enviar mi registro"
+          <>
+            Enviar mi información
+            <ArrowRight className="w-4 h-4" />
+          </>
         )}
       </button>
     </form>

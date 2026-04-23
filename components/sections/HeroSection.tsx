@@ -1,7 +1,15 @@
-import { ArrowRight, Play, MessageCircle } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { ArrowRight, Play } from "lucide-react";
 import Button from "@/components/ui/Button";
 
+const VIDEO_EMBED_BASE =
+  "https://www.youtube.com/embed/kMdAk8g08WI?rel=0&modestbranding=1";
+
 export default function HeroSection() {
+  const [videoPlaying, setVideoPlaying] = useState(false);
+
   return (
     <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-primary-950 to-slate-900">
       {/* Background pattern */}
@@ -44,13 +52,22 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-10">
-              {/* <Button href="/test-vocacional" variant="primary" size="lg">
-                Haz tu test vocacional
-                <ArrowRight className="w-5 h-5" />
-              </Button> */}
-              <Button href="/registro" variant="ghost" size="lg" className="border-slate-600 text-white hover:bg-white/10 hover:border-white">
+              <Button
+                variant="ghost"
+                size="lg"
+                className="border-slate-600 text-white hover:bg-white/10 hover:border-white"
+                onClick={() => setVideoPlaying(true)}
+              >
                 <Play className="w-5 h-5" />
                 Ver video de la carrera
+              </Button>
+              <Button
+                href="#registro"
+                variant="primary"
+                size="lg"
+              >
+                Estoy interesado
+                <ArrowRight className="w-5 h-5" />
               </Button>
             </div>
 
@@ -72,7 +89,11 @@ export default function HeroSection() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary-900/50 border border-white/10 aspect-video bg-slate-800">
               <iframe
-                src="https://www.youtube.com/embed/kMdAk8g08WI?rel=0&modestbranding=1"
+                src={
+                  videoPlaying
+                    ? `${VIDEO_EMBED_BASE}&autoplay=1`
+                    : VIDEO_EMBED_BASE
+                }
                 title="Un día en ISC"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

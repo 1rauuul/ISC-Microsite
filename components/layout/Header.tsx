@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, Cpu, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Button from "@/components/ui/Button";
 
 const navLinks = [
@@ -41,11 +42,19 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-sm group-hover:shadow-primary-200 transition-shadow">
-              <Cpu className="w-5 h-5 text-white" />
-            </div>
-            <div className="leading-tight">
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 shrink-0 group rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            <Image
+              src="/logo-isc.png"
+              alt="Emblema ISC — Ingeniería en Sistemas Computacionales"
+              width={40}
+              height={40}
+              className="h-8 w-8 md:h-9 md:w-9 object-contain rounded-lg group-hover:opacity-90 transition-opacity"
+              priority
+            />
+            <div className="leading-tight hidden sm:block">
               <span className="block font-bold text-slate-900 text-sm">ISC</span>
               <span className="block text-xs text-slate-500 -mt-0.5">Sistemas Computacionales</span>
             </div>

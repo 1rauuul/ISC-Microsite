@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Cpu, MapPin, Phone, Mail, Globe, AtSign, Camera, Play, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Phone, Mail, Globe, Camera, Play, ExternalLink } from "lucide-react";
+import { FaFacebook } from "react-icons/fa";
 
 type FooterLink = { label: string; href: string };
 
@@ -12,7 +14,7 @@ const footerLinks: {
     { label: "Retícula", href: "/reticula" },
     // { label: "Casos de Éxito", href: "/casos-exito" },
     { label: "Retos por Área", href: "/retos" },
-    { label: "Recorrido Virtual", href: "/recorrido-virtual" },
+    // { label: "Recorrido Virtual", href: "/recorrido-virtual" },
   ],
   admision: [
     { label: "Proceso de Admisión", href: "/admision" },
@@ -32,13 +34,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-secondary flex items-center justify-center">
-                <Cpu className="w-5 h-5 text-white" />
-              </div>
+            <Link
+              href="/"
+              className="flex items-center gap-3 mb-4 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-400"
+            >
+              <Image
+                src="/logo-isc.png"
+                alt="Emblema ISC — Ingeniería en Sistemas Computacionales"
+                width={48}
+                height={48}
+                className="h-11 w-11 sm:h-12 sm:w-12 object-contain shrink-0 rounded-lg"
+              />
               <div>
                 <span className="block font-bold text-white text-base">ISC</span>
-                <span className="block text-xs text-slate-400">Ingeniería en Sistemas Computacionales</span>
+                <span className="block text-xs text-slate-400">
+                  Ingeniería en Sistemas Computacionales
+                </span>
               </div>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed mb-5 max-w-xs">
@@ -48,11 +59,11 @@ export default function Footer() {
             {/* Social */}
             <div className="flex items-center gap-3">
               {[
-                { Icon: Globe, href: "#", label: "Facebook" },
-                { Icon: AtSign, href: "#", label: "Twitter / X" },
-                { Icon: Camera, href: "#", label: "Instagram" },
-                { Icon: Play, href: "#", label: "YouTube" },
-                { Icon: ExternalLink, href: "#", label: "LinkedIn" },
+                { Icon: Globe, href: "http://www.ittehuacan.edu.mx/", label: "Sitio Web" },
+                { Icon: FaFacebook, href: "https://www.facebook.com/TecNMTehuacan", label: "Facebook" },
+                // { Icon: Camera, href: "#", label: "Instagram" },
+                // { Icon: Play, href: "#", label: "YouTube" },
+                // { Icon: ExternalLink, href: "#", label: "LinkedIn" },
               ].map(({ Icon, href, label }) => (
                 <a
                   key={label}
