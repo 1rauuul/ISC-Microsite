@@ -12,7 +12,7 @@ export default function BibliotecaSection() {
           center
         />
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
             {
               icon: BookOpen,
@@ -24,11 +24,11 @@ export default function BibliotecaSection() {
               title: "Biblioteca Digital",
               text: "Plataformas digitales con libros, revistas y recursos en línea disponibles las 24 horas.",
             },
-            {
-              icon: Search,
-              title: "Consulta Especializada",
-              text: "Apoyo para investigación académica, tesis y proyectos integradores con material actualizado.",
-            },
+            // {
+            //   icon: Search,
+            //   title: "Consulta Especializada",
+            //   text: "Apoyo para investigación académica, tesis y proyectos integradores con material actualizado.",
+            // },
           ].map(({ icon: Icon, title, text }) => (
             <div
               key={title}

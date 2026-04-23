@@ -113,7 +113,7 @@ export default function CasosExitoPage() {
             Únete a la comunidad ISC y empieza a construir tu trayectoria hoy.
           </p>
           <a
-            href="/registro"
+            href="/#registro"
             className="inline-flex items-center gap-2 bg-white text-primary font-bold px-8 py-3.5 rounded-xl hover:bg-primary-50 transition-colors"
           >
             Iniciar mi registro

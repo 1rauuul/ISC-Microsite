@@ -126,7 +126,7 @@ export default function ResultadoPage() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
-            href="/registro"
+            href="/#registro"
             className="flex-1 flex items-center justify-center gap-2 bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary-dark transition-colors shadow-lg shadow-primary-200"
           >
             Quiero estudiar ISC

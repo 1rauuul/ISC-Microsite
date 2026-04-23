@@ -270,7 +270,7 @@ export const retos = [
     tecnologias: ["Papel y lápiz", "Pseudocódigo"],
     color: "blue",
     icono: "🧠",
-    completados: 1840,
+    completados: 0,
   },
   {
     id: 2,
@@ -356,7 +356,33 @@ export const retos = [
     icono: "💻",
     completados: 3210,
   },
+  {
+    id: 9,
+    titulo: "Binario al habla",
+    area: "Sistemas numéricos",
+    dificultad: "Básico",
+    duracion: "20 min",
+    descripcion: "Activa y desactiva 8 bits como si fueras una computadora. Convierte números decimales a binario y viceversa, y descubre por qué toda la información se guarda como unos y ceros.",
+    tecnologias: ["Sistemas numéricos", "Lógica"],
+    color: "blue",
+    icono: "🔢",
+    completados: 0,
+  },
+  {
+    id: 10,
+    titulo: "¿Qué tipo de dato soy?",
+    area: "Fundamentos de programación",
+    dificultad: "Básico",
+    duracion: "10 min",
+    descripcion: "Se te muestra un valor y debes identificar su tipo de dato: String, Int, Float, Boolean y más. 10 rondas contra el reloj para poner a prueba tus bases.",
+    tecnologias: ["Tipos de datos", "Lógica"],
+    color: "pink",
+    icono: "📦",
+    completados: 0,
+  },
 ];
+
+export type Reto = (typeof retos)[number];
 
 // ─── PREGUNTAS DEL TEST VOCACIONAL ──────────────────────────────────────────
 export const preguntasTest = [
@@ -467,44 +493,106 @@ export const areasRecorrido = [
   },
 ];
 
-// ─── PROCESO DE ADMISIÓN ─────────────────────────────────────────────────────
+// ─── PROCESO DE ADMISIÓN (resumen en home; detalle en /admision) ────────────
 export const pasoAdmision = [
   {
     paso: 1,
     titulo: "Registro en línea",
-    descripcion: "Llena el formulario de preinscripción en el portal institucional.",
-    fecha: "Abr — May 2026",
+    descripcion: "Captura tu solicitud en el SII del TecNM campus Tehuacán.",
+    fecha: "9 feb — 24 may 2026",
     icono: "📝",
   },
   {
     paso: 2,
-    titulo: "Examen de admisión (EXANI-II)",
-    descripcion: "Evaluación CENEVAL con áreas de matemáticas, pensamiento analítico y lenguaje.",
-    fecha: "Jun 2026",
-    icono: "📋",
+    titulo: "Pago de ficha en línea",
+    descripcion: "Pago de derechos por $1,000.00 en el mismo periodo de registro.",
+    fecha: "9 feb — 24 may 2026",
+    icono: "💳",
   },
   {
     paso: 3,
-    titulo: "Publicación de resultados",
-    descripcion: "Consulta tu resultado en el portal. Se notifica por correo electrónico.",
-    fecha: "Jul 2026",
-    icono: "📣",
+    titulo: "Evaluación diagnóstica en línea",
+    descripcion:
+      "EVALUATEC enviará por correo la información el día de la evaluación. Examen: 29 de mayo, 13:00 h.",
+    fecha: "29 may 2026",
+    icono: "📋",
   },
   {
     paso: 4,
-    titulo: "Documentación y pago",
-    descripcion: "Entrega de documentos originales y pago de inscripción semestral.",
-    fecha: "Jul — Ago 2026",
-    icono: "📁",
+    titulo: "Resultados de la evaluación",
+    descripcion: "Publicación en el portal institucional del TecNM Tehuacán.",
+    fecha: "23 jun 2026",
+    icono: "📣",
   },
   {
     paso: 5,
-    titulo: "Inducción y bienvenida",
-    descripcion: "Semana de inducción: campus, plataformas, servicios escolares y mentores.",
-    fecha: "Ago 2026",
+    titulo: "Curso propedéutico (asistencia obligatoria)",
+    descripcion:
+      "Del 10 al 21 de agosto, 9:00 a 13:00 h. Pago en línea de $1,000.00 el 1° de julio.",
+    fecha: "Pago 1 jul · Curso 10—21 ago 2026",
+    icono: "📚",
+  },
+  {
+    paso: 6,
+    titulo: "Pago de inscripción en línea",
+    descripcion: "Inscripción por $2,300.00. Solo aspirantes con bachillerato concluido y constancia.",
+    fecha: "3 ago 2026",
     icono: "🎓",
   },
 ];
+
+/** Proceso en línea — admisión agosto–diciembre 2026 (Instituto Tecnológico de Tehuacán). */
+export const procesoAdmisionLineaAgostoDic2026 = {
+  titulo: "Proceso en línea de admisión \n Agosto – Diciembre 2026",
+  subtitulo: "Instituto Tecnológico de Tehuacán — Tecnológico Nacional de México",
+  notaImportante:
+    "Al momento de la inscripción solo se aceptarán a los aspirantes que hayan concluido satisfactoriamente el bachillerato, sin adeudo de materias, presentando un documento comprobatorio por parte de su bachillerato.",
+  pasos: [
+    {
+      paso: 1,
+      titulo: "Registro en línea",
+      fechas: "Del 9 de febrero al 24 de mayo de 2026",
+      lineas: [] as string[],
+      enlaces: [{ href: "https://sii.tehuacan.tecnm.mx/login", label: "sii.tehuacan.tecnm.mx/login" }],
+    },
+    {
+      paso: 2,
+      titulo: "Pago de ficha en línea",
+      fechas: "Del 9 de febrero al 24 de mayo de 2026",
+      lineas: [] as string[],
+      costo: "$1,000.00",
+    },
+    {
+      paso: 3,
+      titulo: "Evaluación diagnóstica en línea",
+      fechas: "29 de mayo de 2026, 13:00 horas",
+      lineas: [
+        "EVALUATEC enviará por correo electrónico, el día de la evaluación, la información necesaria para realizar la evaluación diagnóstica en línea.",
+      ],
+    },
+    {
+      paso: 4,
+      titulo: "Resultados de la evaluación diagnóstica",
+      fechas: "23 de junio de 2026",
+      lineas: ["Consulta los resultados en el portal del instituto."],
+      enlaces: [{ href: "http://www.tehuacan.tecnm.mx/", label: "www.tehuacan.tecnm.mx" }],
+    },
+    {
+      paso: 5,
+      titulo: "Pago en línea del curso propedéutico (asistencia obligatoria)",
+      fechas: "Curso: del 10 al 21 de agosto de 2026 · Horario: 09:00 a 13:00 horas",
+      lineas: ["Pago del curso propedéutico: 1° de julio de 2026."],
+      costo: "$1,000.00",
+    },
+    {
+      paso: 6,
+      titulo: "Pago en línea de inscripción",
+      fechas: "3 de agosto de 2026",
+      lineas: [] as string[],
+      costo: "$2,300.00",
+    },
+  ],
+};
 
 // ─── MISIÓN, VISIÓN, OBJETIVOS, ATRIBUTOS ──────────────────────────────────
 export const misionVision = {
@@ -512,11 +600,22 @@ export const misionVision = {
     "La academia de sistemas y computación tiene como misión formar de manera integral, diversificada y con calidad, profesionistas comprometidos con el conocimiento y la investigación de la ingeniería en Sistemas Computacionales, competitivos y capaces de ejercer el liderazgo con sentido propositivo para contribuir responsablemente en la integración de una sociedad de bienestar, con impacto regional, nacional e internacional.",
   vision:
     "La academia de sistemas y computación será reconocida por su compromiso con la responsabilidad social, su calidad académica, liderazgo y competitividad de sus egresados, por el desarrollo integral de su planta docente y administrativa; además, de su importante participación en la investigación e innovación científica que contribuya fortaleciendo la carrera de Ingeniería en Sistemas Computacionales. Así mismo, ser distinguida a nivel regional, nacional e internacional por la certificación de los procesos y acreditación de su programa educativo.",
-  objetivos:
-    "El egresado(a) construye, configura, evalúa y selecciona entornos de servicios computacionales, capaces de generar nueva tecnología y de encontrar e implantar soluciones eficientes de cómputo en las organizaciones para contribuir al desarrollo nacional e internacional. El egresado(a) crea sus propias empresas estableciéndose como profesionales en la práctica de la Ingeniería en Sistemas Computacionales promoviendo el desarrollo tecnológico, demostrando liderazgo y respeto a los valores del ser humano y la naturaleza. El egresado(a) desarrolla actividades de capacitación, educación continua,  posgrado e investigación y desarrollo tecnológico; para participar en propuestas de mejora para el desarrollo de su entorno.",
-  atributos:
-    "Analizar, diseñar, desarrollar e implementar soluciones computacionales a problemas de diversos contextos, integrando diferentes tecnologías, plataformas o dispositivos, Diseñar, desarrollar y aplicar modelos computacionales para solucionar problemas, mediante la selección y uso de herramientas de ingeniería, Diseñar, implementar y administrar bases de datos optimizando los recursos disponibles, conforme a las normas de gestión y seguridad de la información, Diseñar, configurar y administrar redes de computadoras para crear soluciones de conectividad en la organización aplicando las normas y estándares, Comunicar sus ideas de manera efectiva a diferentes audiencias, Asumir las responsabilidades éticas en el desarrollo de su profesión en situaciones relevantes analizando el impacto económico, técnico, social y ambiental, Reconocer la importancia del aprendizaje continuo para permanecer actualizado en la ingeniería para aplicar e integrar conocimientos de manera adecuada, Coordinar y participar en equipos multidisciplinarios para la aplicación de soluciones innovadoras en diferentes contextos.",
-};
+  objetivos: [
+    "El egresado(a) construye, configura, evalúa y selecciona entornos de servicios computacionales, capaces de generar nueva tecnología y de encontrar e implantar soluciones eficientes de cómputo en las organizaciones para contribuir al desarrollo nacional e internacional.",
+    "El egresado(a) crea sus propias empresas estableciéndose como profesionales en la práctica de la Ingeniería en Sistemas Computacionales promoviendo el desarrollo tecnológico, demostrando liderazgo y respeto a los valores del ser humano y la naturaleza.",
+    "El egresado(a) desarrolla actividades de capacitación, educación continua, posgrado e investigación y desarrollo tecnológico; para participar en propuestas de mejora para el desarrollo de su entorno.",
+  ],
+  atributos: [
+    "Analizar, diseñar, desarrollar e implementar soluciones computacionales a problemas de diversos contextos, integrando diferentes tecnologías, plataformas o dispositivos.",
+    "Diseñar, desarrollar y aplicar modelos computacionales para solucionar problemas, mediante la selección y uso de herramientas de ingeniería.",
+    "Diseñar, implementar y administrar bases de datos optimizando los recursos disponibles, conforme a las normas de gestión y seguridad de la información.",
+    "Diseñar, configurar y administrar redes de computadoras para crear soluciones de conectividad en la organización aplicando las normas y estándares.",
+    "Comunicar sus ideas de manera efectiva a diferentes audiencias.",
+    "Asumir las responsabilidades éticas en el desarrollo de su profesión en situaciones relevantes analizando el impacto económico, técnico, social y ambiental.",
+    "Reconocer la importancia del aprendizaje continuo para permanecer actualizado en la ingeniería para aplicar e integrar conocimientos de manera adecuada.",
+    "Coordinar y participar en equipos multidisciplinarios para la aplicación de soluciones innovadoras en diferentes contextos.",
+  ],
+} as const;
 
 // ─── DOCENTES DEL ÁREA ─────────────────────────────────────────────────────
 export const docentes = [
@@ -546,13 +645,13 @@ export const serviciosEscolares = {
     { label: "Consulta del número de seguro social del IMSS", url: "https://serviciosdigitales.imss.gob.mx/gestionAsegurados-web-externo/asignacionNSS" },
     { label: "Constancia de vigencia de derechos del IMSS", url: "https://serviciosdigitales.imss.gob.mx/gestionAsegurados-web-externo/vigencia" },
     { label: "Asignación de clínica del IMSS", url: "https://serviciosdigitales.imss.gob.mx/portal-ciudadano-web-externo/derechohabientes/tramite/registro" },
-    { label: "Reimpresión de cartilla nacional de salud", url: "https://serviciosdigitales.imss.gob.mx/gestionAsegurados-web-externo/cartilla" },
+    // { label: "Reimpresión de cartilla nacional de salud", url: "https://serviciosdigitales.imss.gob.mx/gestionAsegurados-web-externo/cartilla" },
   ],
   escolares: [
     { label: "Solicitud de credenciales", url: "#" },
-    { label: "Descarga de formatos de inscripción", url: "http://www.tehuacan.tecnm.mx/wp-content/uploads/2023/03/DOCUMENTOS_DE_INSCRIPCIN.pdf" },
-    { label: "Lineamientos", url: "#" },
-    { label: "Examen médico nuevo ingreso", url: "http://sm.ittehuacan.edu.mx:84/sistema/login/" },
+    { label: "Descarga de formatos de inscripción", url: "http://www.tehuacan.tecnm.mx/wp-content.old/uploads/2025/06/DOCUMENTOS-2025-inscripcion.zip" },
+    { label: "Lineamientos", url: "http://www.tehuacan.tecnm.mx/index.php/lineamientos-2015/" },
+    // { label: "Examen médico nuevo ingreso", url: "http://sm.ittehuacan.edu.mx:84/sistema/login/" },
   ],
   contactos: [
     { label: "Trámites, documentación y cuentas del SII", correo: "controlescolar2@tehuacan.tecnm.mx" },
@@ -562,12 +661,44 @@ export const serviciosEscolares = {
 
 // ─── INFORMACIÓN IMPORTANTE (GRID) ─────────────────────────────────────────
 export const infoImportante = [
-  { titulo: "Organigrama ISC", icono: "🏛️" },
-  { titulo: "Retícula ISIE-TIC-2023-01", icono: "📋" },
-  { titulo: "Convenios y Asociaciones", icono: "🤝" },
-  { titulo: "Calendario Escolar", icono: "📅" },
-  { titulo: "Participación Docente", icono: "👨‍🏫" },
-  { titulo: "Cuerpos Académicos", icono: "🎓" },
-  { titulo: "Ubicación del Edificio", icono: "📍" },
-  { titulo: "Proceso de Titulación", icono: "📜" },
+  {
+    titulo: "Organigrama ISC",
+    icono: "🏛️",
+    href: "http://www.tehuacan.tecnm.mx/isc/wp-content/uploads/2023/06/ORGANIGRAMA-SISTEMAS.pdf",
+  },
+  {
+    titulo: "Retícula ISIE-TIC-2023-01",
+    icono: "📋",
+    href: "/reticula",
+  },
+  {
+    titulo: "Convenios y Asociaciones",
+    icono: "🤝",
+    href: "http://www.tehuacan.tecnm.mx/isc/?page_id=225/",
+  },
+  // {
+  //   titulo: "Calendario Escolar",
+  //   icono: "📅",
+  //   href: "http://www.tehuacan.tecnm.mx/",
+  // },
+  // {
+  //   titulo: "Participación Docente",
+  //   icono: "👨‍🏫",
+  //   href: "http://www.ittehuacan.edu.mx/",
+  // },
+  // {
+  //   titulo: "Cuerpos Académicos",
+  //   icono: "🎓",
+  //   href: "http://www.ittehuacan.edu.mx/",
+  // },
+  // {
+  //   titulo: "Ubicación del Edificio",
+  //   icono: "📍",
+  //   href: "https://maps.google.com/?q=Instituto+Tecnológico+de+Tehuacán",
+  // },
+  // {
+  //   titulo: "Proceso de Titulación",
+  //   icono: "📜",
+  //   href: "http://www.tehuacan.tecnm.mx/",
+  // },
 ];

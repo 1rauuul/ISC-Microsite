@@ -12,13 +12,16 @@ const footerLinks: {
 } = {
   carrera: [
     { label: "Retícula", href: "/reticula" },
+    { label: "Misión Académica", href: "/#mision-academica" },
+    { label: "Visión Académica", href: "/#vision-academica" },
+    { label: "Objetivos y Atributos", href: "/#objetivos-atributos" },
     // { label: "Casos de Éxito", href: "/casos-exito" },
     { label: "Retos por Área", href: "/retos" },
     // { label: "Recorrido Virtual", href: "/recorrido-virtual" },
   ],
   admision: [
     { label: "Proceso de Admisión", href: "/admision" },
-    { label: "Registro", href: "/registro" },
+    { label: "Regístrate", href: "/#registro" },
   ],
   herramientas: [
     // { label: "Test Vocacional", href: "/test-vocacional" },
@@ -123,18 +126,20 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2.5 text-sm text-slate-400">
                 <MapPin className="w-4 h-4 text-primary-400 mt-0.5 flex-shrink-0" />
-                <span>Blvd. Tecnológico s/n, Ciudad, Estado, México</span>
+                <span>Libramiento Tecnológico S/N A.P.247
+Santa María Coapan, Tehuacán, Puebla, México
+C.P. 75770</span>
               </li>
               <li className="flex items-center gap-2.5 text-sm text-slate-400">
                 <Phone className="w-4 h-4 text-primary-400 flex-shrink-0" />
-                <span>(800) 123-4567</span>
+                <span>Telefono: 238 380 3370</span>
               </li>
-              <li className="flex items-center gap-2.5 text-sm text-slate-400">
+              {/* <li className="flex items-center gap-2.5 text-sm text-slate-400">
                 <Mail className="w-4 h-4 text-primary-400 flex-shrink-0" />
                 <span>sistemas@tecnm.mx</span>
-              </li>
+              </li> */}
             </ul>
-            <div className="mt-4">
+            {/* <div className="mt-4">
               <h5 className="text-xs font-semibold text-white uppercase tracking-wider mb-2.5">
                 Herramientas
               </h5>
@@ -150,7 +155,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
 

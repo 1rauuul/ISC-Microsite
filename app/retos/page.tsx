@@ -8,21 +8,19 @@ export const metadata: Metadata = {
   description: "Catálogo de mini retos técnicos por área de Ingeniería en Sistemas.",
 };
 
-const INTERACTIVE_IDS = [2, 3, 4];
+const INTERACTIVE_IDS = [10, 3, 9, 4, 2];
 
 export default function RetosPage() {
-  const retosInteractivos = retos.filter((r) =>
-    INTERACTIVE_IDS.includes(r.id)
-  );
+  const retosInteractivos = INTERACTIVE_IDS.map((id) => retos.find((r) => r.id === id)!).filter(Boolean);
 
   const stats = [
     { val: retosInteractivos.length.toString(), label: "Retos interactivos" },
-    {
-      val: retosInteractivos
-        .reduce((a, r) => a + r.completados, 0)
-        .toLocaleString(),
-      label: "Completados",
-    },
+    // {
+    //   val: retosInteractivos
+    //     .reduce((a, r) => a + r.completados, 0)
+    //     .toLocaleString(),
+    //   label: "Completados",
+    // },
     { val: "Sin código", label: "Solo curiosidad" },
   ];
 

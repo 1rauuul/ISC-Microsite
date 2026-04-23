@@ -28,7 +28,6 @@ export default function HomePage() {
       <HeroSection />
       <MisionVisionSection />
       {/* <VideoSection /> */}
-      <QuoteSection />
       <MiniRetosSection />
       <CareerPromoSection />
       <AdmisionCostosApoyosSection />
@@ -37,15 +36,16 @@ export default function HomePage() {
       {/* <WhatsAppSection /> */}
       {/* <TestVocacionalCTA /> */}
       <ReticulaPreviewSection />
-      <CasosExitoSection />
+      {/* <CasosExitoSection /> */}
       <ClubProgramacionSection />
       {/* <RecorridoVirtualSection /> */}
       <BibliotecaSection />
       {/* <EventosSection /> */}
       <CongresoSection />
       <ServiciosEscolaresSection />
+      <QuoteSection />
       <InfoImportanteSection />
-      <TitulacionEgelSection />
+      {/* <TitulacionEgelSection /> */}
       <RankingSection />
       <DirectorioDocentesSection />
     </>

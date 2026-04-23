@@ -1,24 +1,14 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { X, Users, Zap } from "lucide-react";
+import { X } from "lucide-react";
 import Badge from "@/components/ui/Badge";
+import type { Reto } from "@/lib/mockData";
 import CifradoCesarReto from "./CifradoCesarReto";
 import AdivinaNumeroReto from "./AdivinaNumeroReto";
 import EncuentraElBugReto from "./EncuentraElBugReto";
-
-type Reto = {
-  id: number;
-  titulo: string;
-  area: string;
-  dificultad: string;
-  duracion: string;
-  descripcion: string;
-  tecnologias: string[];
-  color: string;
-  icono: string;
-  completados: number;
-};
+import BinarioDecimalReto from "./BinarioDecimalReto";
+import TipoDeDatoReto from "./TipoDeDatoReto";
 
 type Props = {
   reto: Reto | null;
@@ -29,6 +19,8 @@ const RETOS_INTERACTIVOS: Record<number, React.ComponentType> = {
   2: CifradoCesarReto,
   3: AdivinaNumeroReto,
   4: EncuentraElBugReto,
+  9: BinarioDecimalReto,
+  10: TipoDeDatoReto,
 };
 
 const difficultyColor: Record<string, "green" | "yellow" | "red"> = {
@@ -81,16 +73,6 @@ export default function RetoModal({ reto, onClose }: Props) {
             <h2 className="font-bold text-slate-900 text-base leading-tight">
               {reto.titulo}
             </h2>
-            <div className="flex items-center gap-3 mt-1.5 text-xs text-slate-500">
-              <span className="flex items-center gap-1">
-                <Zap className="w-3 h-3 text-yellow-500" />
-                {reto.duracion}
-              </span>
-              <span className="flex items-center gap-1">
-                <Users className="w-3 h-3" />
-                {reto.completados.toLocaleString()} completados
-              </span>
-            </div>
           </div>
           <button
             onClick={onClose}

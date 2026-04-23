@@ -1,21 +1,9 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Users, Zap, Play } from "lucide-react";
+import { Play } from "lucide-react";
+import type { Reto } from "@/lib/mockData";
 import RetoModal from "./RetoModal";
-
-type Reto = {
-  id: number;
-  titulo: string;
-  area: string;
-  dificultad: string;
-  duracion: string;
-  descripcion: string;
-  tecnologias: string[];
-  color: string;
-  icono: string;
-  completados: number;
-};
 
 type Props = {
   retos: Reto[];
@@ -64,20 +52,9 @@ export default function RetosInteractivosGrid({ retos }: Props) {
                 <h3 className="font-bold text-slate-900 text-base sm:text-lg leading-snug mb-1.5">
                   {reto.titulo}
                 </h3>
-                <p className="text-sm text-slate-500 leading-relaxed mb-3">
+                <p className="text-sm text-slate-500 leading-relaxed">
                   {reto.descripcion}
                 </p>
-
-                <div className="flex items-center gap-4 text-sm text-slate-500">
-                  <div className="flex items-center gap-1.5">
-                    <Users className="w-4 h-4 shrink-0" />
-                    <span>{reto.completados.toLocaleString()} completados</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Zap className="w-4 h-4 text-yellow-500 shrink-0" />
-                    <span>{reto.duracion}</span>
-                  </div>
-                </div>
               </div>
 
               <div className="shrink-0 hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary self-center">

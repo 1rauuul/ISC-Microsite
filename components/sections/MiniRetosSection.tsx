@@ -2,10 +2,10 @@
 
 import { useState, useCallback } from "react";
 import Link from "next/link";
-import { ArrowRight, Users, Zap, Play } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
 import RetoModal from "@/components/retos/RetoModal";
-import { retos } from "@/lib/mockData";
+import { retos, type Reto } from "@/lib/mockData";
 
 const cardColors: Record<string, string> = {
   violet: "from-violet-50 to-violet-100/50 border-violet-200",
@@ -18,12 +18,10 @@ const cardColors: Record<string, string> = {
   teal: "from-teal-50 to-teal-100/50 border-teal-200",
 };
 
-const INTERACTIVE_IDS = [2, 3, 4];
-
-type Reto = (typeof retos)[number];
+const INTERACTIVE_IDS = [10, 3, 9, 4, 2];
 
 export default function MiniRetosSection() {
-  const interactivos = retos.filter((r) => INTERACTIVE_IDS.includes(r.id));
+  const interactivos = INTERACTIVE_IDS.map((id) => retos.find((r) => r.id === id)!).filter(Boolean);
   const [retoAbierto, setRetoAbierto] = useState<Reto | null>(null);
   const cerrarModal = useCallback(() => setRetoAbierto(null), []);
 
@@ -45,7 +43,7 @@ export default function MiniRetosSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {interactivos.map((reto) => (
             <button
               key={reto.id}
@@ -64,20 +62,9 @@ export default function MiniRetosSection() {
               <h3 className="font-bold text-slate-900 text-base leading-snug mb-2">
                 {reto.titulo}
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-4 line-clamp-3">
+              <p className="text-slate-500 text-sm leading-relaxed line-clamp-3">
                 {reto.descripcion}
               </p>
-
-              <div className="flex items-center justify-between text-sm text-slate-500 pt-3 border-t border-white/60">
-                <div className="flex items-center gap-1.5">
-                  <Users className="w-4 h-4" />
-                  <span>{reto.completados.toLocaleString()}</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <Zap className="w-4 h-4 text-yellow-500" />
-                  <span>{reto.duracion}</span>
-                </div>
-              </div>
             </button>
           ))}
         </div>

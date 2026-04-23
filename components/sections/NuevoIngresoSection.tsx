@@ -5,7 +5,7 @@ const items = [
   {
     icon: GraduationCap,
     title: "Especialidad ofrecida",
-    text: "El área de Ingeniería en Sistemas Computacionales ofrece la especialidad en Tecnologías de la Información y Comunicación.",
+    text: "El área de Ingeniería en Sistemas Computacionales ofrece la especialidad Industria 4.0.",
   },
   {
     icon: MapPin,

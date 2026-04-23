@@ -57,14 +57,28 @@ type Status =
   | { kind: "error"; message: string };
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_DIGITS = /^\d{10}$/;
+
+function formatTelefono(raw: string): string {
+  const digits = raw.replace(/\D/g, "").slice(0, 10);
+  if (digits.length <= 3) return digits;
+  if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
 
 export default function ContactoForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<Status>({ kind: "idle" });
   const [fieldErrors, setFieldErrors] = useState<Partial<Record<keyof FormState, string>>>({});
+  const [touched, setTouched] = useState<Partial<Record<keyof FormState, boolean>>>({});
 
   const isSubmitting = status.kind === "submitting";
   const isSuccess = status.kind === "success";
+
+  const telefonoDigitos = useMemo(() => form.telefono.replace(/\D/g, ""), [form.telefono]);
+
+  const emailValid = EMAIL_REGEX.test(form.email.trim());
+  const telefonoValid = PHONE_DIGITS.test(telefonoDigitos);
 
   const handleChange = <K extends keyof FormState>(key: K, value: FormState[K]) => {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -72,6 +86,69 @@ export default function ContactoForm() {
       if (!prev[key]) return prev;
       const next = { ...prev };
       delete next[key];
+      return next;
+    });
+  };
+
+  const handleEmailChange = (raw: string) => {
+    handleChange("email", raw);
+    if (touched.email) {
+      setFieldErrors((prev) => {
+        const next = { ...prev };
+        if (!raw.trim()) {
+          next.email = "Ingresa tu correo electrónico.";
+        } else if (!EMAIL_REGEX.test(raw.trim())) {
+          next.email = "El correo electrónico no es válido.";
+        } else {
+          delete next.email;
+        }
+        return next;
+      });
+    }
+  };
+
+  const handleTelefonoChange = (raw: string) => {
+    const formatted = formatTelefono(raw);
+    handleChange("telefono", formatted);
+    if (touched.telefono) {
+      const digits = formatted.replace(/\D/g, "");
+      setFieldErrors((prev) => {
+        const next = { ...prev };
+        if (!digits) {
+          next.telefono = "Ingresa tu teléfono.";
+        } else if (digits.length < 10) {
+          next.telefono = `Faltan ${10 - digits.length} dígito${digits.length === 9 ? "" : "s"}.`;
+        } else {
+          delete next.telefono;
+        }
+        return next;
+      });
+    }
+  };
+
+  const handleBlur = (field: keyof FormState) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+    setFieldErrors((prev) => {
+      const next = { ...prev };
+      if (field === "email") {
+        if (!form.email.trim()) {
+          next.email = "Ingresa tu correo electrónico.";
+        } else if (!EMAIL_REGEX.test(form.email.trim())) {
+          next.email = "El correo electrónico no es válido.";
+        } else {
+          delete next.email;
+        }
+      }
+      if (field === "telefono") {
+        const digits = form.telefono.replace(/\D/g, "");
+        if (!digits) {
+          next.telefono = "Ingresa tu teléfono.";
+        } else if (digits.length < 10) {
+          next.telefono = `Faltan ${10 - digits.length} dígito${digits.length === 9 ? "" : "s"}.`;
+        } else {
+          delete next.telefono;
+        }
+      }
       return next;
     });
   };
@@ -88,11 +165,11 @@ export default function ContactoForm() {
       errors.email = "El correo electrónico no es válido.";
     }
 
-    const telefonoDigitos = form.telefono.replace(/\D/g, "");
-    if (!form.telefono.trim()) {
+    const digits = form.telefono.replace(/\D/g, "");
+    if (!digits) {
       errors.telefono = "Ingresa tu teléfono.";
-    } else if (telefonoDigitos.length !== 10) {
-      errors.telefono = "El teléfono debe tener exactamente 10 dígitos.";
+    } else if (digits.length !== 10) {
+      errors.telefono = `Faltan ${10 - digits.length} dígito${digits.length === 9 ? "" : "s"}.`;
     }
 
     if (!form.como_se_entero) {
@@ -164,8 +241,6 @@ export default function ContactoForm() {
     }
   };
 
-  const telefonoLimpio = useMemo(() => form.telefono.replace(/\D/g, ""), [form.telefono]);
-
   if (isSuccess) {
     return (
       <div className="bg-white rounded-3xl shadow-2xl p-10 text-center">
@@ -228,6 +303,7 @@ export default function ContactoForm() {
           label="Correo electrónico *"
           icon={<Mail className="w-4 h-4 text-slate-400 flex-shrink-0" />}
           error={fieldErrors.email}
+          valid={touched.email && emailValid && !fieldErrors.email}
         >
           <input
             type="email"
@@ -235,7 +311,8 @@ export default function ContactoForm() {
             autoComplete="email"
             inputMode="email"
             value={form.email}
-            onChange={(e) => handleChange("email", e.target.value)}
+            onChange={(e) => handleEmailChange(e.target.value)}
+            onBlur={() => handleBlur("email")}
             disabled={isSubmitting}
             className="flex-1 text-sm outline-none text-slate-700 placeholder-slate-400 bg-transparent disabled:opacity-60"
           />
@@ -245,20 +322,21 @@ export default function ContactoForm() {
           label="Teléfono / WhatsApp *"
           icon={<Phone className="w-4 h-4 text-slate-400 flex-shrink-0" />}
           error={fieldErrors.telefono}
+          valid={touched.telefono && telefonoValid && !fieldErrors.telefono}
           hint={
-            form.telefono && !fieldErrors.telefono
-              ? `${telefonoLimpio.length}/10 dígitos`
+            touched.telefono && !fieldErrors.telefono && !telefonoValid && telefonoDigitos.length > 0
+              ? `${telefonoDigitos.length}/10 dígitos`
               : undefined
           }
         >
           <input
             type="tel"
-            placeholder="10 dígitos"
+            placeholder="(XXX) XXX-XXXX"
             autoComplete="tel"
             inputMode="numeric"
-            maxLength={14}
             value={form.telefono}
-            onChange={(e) => handleChange("telefono", e.target.value.replace(/[^\d\s()+-]/g, ""))}
+            onChange={(e) => handleTelefonoChange(e.target.value)}
+            onBlur={() => handleBlur("telefono")}
             disabled={isSubmitting}
             className="flex-1 text-sm outline-none text-slate-700 placeholder-slate-400 bg-transparent disabled:opacity-60"
           />
@@ -432,6 +510,7 @@ function Field({
   children,
   error,
   hint,
+  valid = false,
   alignTop = false,
 }: {
   label: string;
@@ -439,6 +518,7 @@ function Field({
   children: React.ReactNode;
   error?: string;
   hint?: string;
+  valid?: boolean;
   alignTop?: boolean;
 }) {
   return (
@@ -448,11 +528,16 @@ function Field({
         className={`flex ${alignTop ? "items-start" : "items-center"} gap-3 border rounded-xl px-3 py-3 transition-all ${
           error
             ? "border-red-300 focus-within:border-red-400 focus-within:ring-2 focus-within:ring-red-100"
+            : valid
+            ? "border-green-400 focus-within:border-green-500 focus-within:ring-2 focus-within:ring-green-100"
             : "border-slate-200 focus-within:border-primary-400 focus-within:ring-2 focus-within:ring-primary-100"
         }`}
       >
         {icon}
         {children}
+        {valid && !error && (
+          <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
+        )}
       </div>
       {error && (
         <p className="mt-1 text-xs text-red-600 flex items-center gap-1">
