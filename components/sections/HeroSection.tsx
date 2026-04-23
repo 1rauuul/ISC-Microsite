@@ -10,6 +10,10 @@ const VIDEO_EMBED_BASE =
 export default function HeroSection() {
   const [videoPlaying, setVideoPlaying] = useState(false);
 
+  const embedSrc = videoPlaying
+    ? `${VIDEO_EMBED_BASE}?autoplay=1&mute=1&playsinline=1&rel=0`
+    : `${VIDEO_EMBED_BASE}?rel=0&playsinline=1`;
+
   return (
     <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-primary-950 to-slate-900">
       {/* Background pattern */}
@@ -89,13 +93,9 @@ export default function HeroSection() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary-900/50 border border-white/10 aspect-video bg-slate-800">
               <iframe
-                src={
-                  videoPlaying
-                    ? `${VIDEO_EMBED_BASE}?autoplay=1`
-                    : VIDEO_EMBED_BASE
-                }
+                src={embedSrc}
                 title="Un día en ISC"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 className="absolute inset-0 w-full h-full"
               />

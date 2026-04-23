@@ -575,7 +575,7 @@ export const procesoAdmisionLineaAgostoDic2026 = {
       titulo: "Resultados de la evaluación diagnóstica",
       fechas: "23 de junio de 2026",
       lineas: ["Consulta los resultados en el portal del instituto."],
-      enlaces: [{ href: "http://www.tehuacan.tecnm.mx/", label: "www.tehuacan.tecnm.mx" }],
+      enlaces: [{ href: "https://www.tehuacan.tecnm.mx/", label: "www.tehuacan.tecnm.mx" }],
     },
     {
       paso: 5,
@@ -649,8 +649,8 @@ export const serviciosEscolares = {
   ],
   escolares: [
     { label: "Solicitud de credenciales", url: "#" },
-    { label: "Descarga de formatos de inscripción", url: "http://www.tehuacan.tecnm.mx/wp-content.old/uploads/2025/06/DOCUMENTOS-2025-inscripcion.zip" },
-    { label: "Lineamientos", url: "http://www.tehuacan.tecnm.mx/index.php/lineamientos-2015/" },
+    { label: "Descarga de formatos de inscripción", url: "https://www.tehuacan.tecnm.mx/wp-content.old/uploads/2025/06/DOCUMENTOS-2025-inscripcion.zip" },
+    { label: "Lineamientos", url: "https://www.tehuacan.tecnm.mx/index.php/lineamientos-2015/" },
     // { label: "Examen médico nuevo ingreso", url: "http://sm.ittehuacan.edu.mx:84/sistema/login/" },
   ],
   contactos: [
@@ -664,7 +664,7 @@ export const infoImportante = [
   {
     titulo: "Organigrama ISC",
     icono: "🏛️",
-    href: "http://www.tehuacan.tecnm.mx/isc/wp-content/uploads/2023/06/ORGANIGRAMA-SISTEMAS.pdf",
+    href: "https://www.tehuacan.tecnm.mx/isc/wp-content/uploads/2023/06/ORGANIGRAMA-SISTEMAS.pdf",
   },
   {
     titulo: "Retícula ISIE-TIC-2023-01",
@@ -674,7 +674,7 @@ export const infoImportante = [
   {
     titulo: "Convenios y Asociaciones",
     icono: "🤝",
-    href: "http://www.tehuacan.tecnm.mx/isc/?page_id=225/",
+    href: "https://www.tehuacan.tecnm.mx/isc/?page_id=225/",
   },
   // {
   //   titulo: "Calendario Escolar",

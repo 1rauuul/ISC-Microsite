@@ -62,7 +62,7 @@ export default function Footer() {
             {/* Social */}
             <div className="flex items-center gap-3">
               {[
-                { Icon: Globe, href: "http://www.ittehuacan.edu.mx/", label: "Sitio Web" },
+                { Icon: Globe, href: "https://www.ittehuacan.edu.mx/", label: "Sitio Web" },
                 { Icon: FaFacebook, href: "https://www.facebook.com/TecNMTehuacan", label: "Facebook" },
                 // { Icon: Camera, href: "#", label: "Instagram" },
                 // { Icon: Play, href: "#", label: "YouTube" },
@@ -71,6 +71,8 @@ export default function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-primary flex items-center justify-center transition-colors"
                 >
