@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { Cpu, MapPin, Phone, Mail, Globe, AtSign, Camera, Play, ExternalLink } from "lucide-react";
 
-const footerLinks = {
+type FooterLink = { label: string; href: string };
+
+const footerLinks: {
+  carrera: FooterLink[];
+  admision: FooterLink[];
+  herramientas: FooterLink[];
+} = {
   carrera: [
     { label: "Retícula", href: "/reticula" },
     // { label: "Casos de Éxito", href: "/casos-exito" },
