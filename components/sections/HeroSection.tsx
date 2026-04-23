@@ -5,7 +5,7 @@ import { ArrowRight, Play } from "lucide-react";
 import Button from "@/components/ui/Button";
 
 const VIDEO_EMBED_BASE =
-  "https://www.youtube.com/embed/kMdAk8g08WI?rel=0&modestbranding=1";
+  "https://www.youtube.com/embed/pBJ8HEUi_4s";
 
 export default function HeroSection() {
   const [videoPlaying, setVideoPlaying] = useState(false);
@@ -91,7 +91,7 @@ export default function HeroSection() {
               <iframe
                 src={
                   videoPlaying
-                    ? `${VIDEO_EMBED_BASE}&autoplay=1`
+                    ? `${VIDEO_EMBED_BASE}?autoplay=1`
                     : VIDEO_EMBED_BASE
                 }
                 title="Un día en ISC"
